@@ -1,9 +1,8 @@
 # SDL-Game #
-***
 
 ## Description: ##
 
-An example SDL Game written in C++ designed to be multicompiler &amp; multiplatform.
+An example SDL Game written in C++ designed to be IDE independent &amp; multiplatform.
 
 ## Dependecies: ##
 
