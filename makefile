@@ -3,8 +3,8 @@ CC = g++
 CFLAGS = -Wall -std=c++0x -static-libgcc -static-libstdc++
 LFLAGS = -lmingw32 -lSDLmain -lSDL -lSDL_image -lSDL_mixer
 
-bin/game: ${OBJS} res/resource.res
-	${CC} ${CFLAGS} ${OBJS} res/resource.res ${LFLAGS} -o $@
+bin/game: ${OBJS}
+	${CC} ${CFLAGS} ${OBJS} ${LFLAGS} -o $@
 
 main.o: src/main.cpp src/lib_misc.h src/lib_sdl.h src/constants.h src/map.h
 	${CC} ${CFLAGS} -c src/main.cpp
@@ -21,8 +21,8 @@ map.o: src/map.h src/map.cpp src/lib_sdl.h src/lib_misc.h src/constants.h
 res/resource.res: res/resource.rc res/icon.ico
 	windres $< -O coff -o $@
 
-release: ${OBJS} res/resource.res
-	${CC} ${CFLAGS} ${OBJS} res/resource.res ${LFLAGS} -mwindows -o $@
+windows: ${OBJS} res/resource.res
+	${CC} ${CFLAGS} ${OBJS} res/resource.res ${LFLAGS} -mwindows -o bin/game.exe
 
 clean:
 	rm ${OBJS} res/resource.res bin/game.exe
