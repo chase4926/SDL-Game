@@ -78,10 +78,7 @@ void Image_loader::add_image(std::string filename) {
 }
 
 SDL_Surface* Image_loader::get_image(std::string filename) {
-  if (image_index_map.find(filename) == image_index_map.end()) {
-    image_pointer_vector.push_back(load_image(filename));
-    image_index_map[filename] = image_pointer_vector.size() - 1;
-  }
+  add_image(filename); // Load the image if it isn't already loaded
   return image_pointer_vector[image_index_map[filename]];
 }
 
