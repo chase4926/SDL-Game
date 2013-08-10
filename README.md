@@ -4,7 +4,7 @@
 
 An example SDL Game written in C++ designed to be IDE independent &amp; multiplatform.
 
-## Dependecies: ##
+## Dependencies: ##
 
 *  lmingw32
 *  lSDLmain
@@ -12,7 +12,7 @@ An example SDL Game written in C++ designed to be IDE independent &amp; multipla
 *  lSDL_image
 *  lSDL_mixer
 
-To compile type:
+### To compile use: ###
 
 "make"
 
